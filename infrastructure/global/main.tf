@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.0"
+      version = "~> 3.36.0"
     }
   }
 }
@@ -14,9 +14,9 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "testinfbucket"
-    key    = "infrastructure/global/terraform.tfstate"
-    region = "ap-southeast-1"
+    bucket         = "testinfbucket"
+    key            = "infrastructure/global/terraform.tfstate"
+    region         = "ap-southeast-1"
     dynamodb_table = "testinfbucket"
   }
 }
