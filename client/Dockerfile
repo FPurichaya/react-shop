@@ -1,7 +1,7 @@
 ARG NODE_TAG=10-alpine
 ARG NGINX_TAG=stable_alpine
 
-FROM node:${NODE_TAG} as Yarnek
+FROM node:${NODE_TAG} as Yarn
 
 RUN mkdir -p /app/bgshop
 WORKDIR /app/bgshop
@@ -20,4 +20,4 @@ FROM nginx:stable-alpine as Web
 
 COPY docker/nginx /etc/nginx
 RUN rm -rf /usr/share/nginx/html/*
-COPY --from=Yarnek /app/bgshop/build /usr/share/nginx/html
+COPY --from=Yarn /app/bgshop/build /usr/share/nginx/html
