@@ -4,7 +4,7 @@ variable "region" {
 }
 
 variable "project" {
-  default = "react-shop"
+  default = "jpreact-shop"
 }
 
 variable "environment" {
